@@ -1,20 +1,54 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic Tac Toe!</title>
 
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+      <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
+      <h1>Tic Tac Toe!</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+          <div class="board">
+            <div class="cell">
+              <div class="mark"><h2 id="a1">X</h2></div>
+            </div>
+            <div class="cell">
+              <div class="mark"><h2 id="a2">O</h2></div>
+            </div>
+            <div class="cell">
+              <div class="mark"><h2 id="a3"></h2></div>
+            </div>
+            <div class="cell">
+              <div class="mark"><h2 id="b1"></h2></div>
+            </div>
+            <div class="cell">
+              <div class="mark"><h2 id="b2"></h2></div>
+            </div>
+            <div class="cell">
+              <div class="mark"><h2 id="b3"></h2></div>
+            </div>
+            <div class="cell">
+              <div class="mark"><h2 id="c1"></h2></div>
+            </div>
+            <div class="cell">
+              <div class="mark"><h2 id="c2"></h2></div>
+            </div>
+            <div class="cell">
+              <div class="mark"><h2 id="c3"></h2></div>
+            </div>
+          </div>
+
+          <footer>
+            <div class="player x">
+              <h2 class="x">X</h2>
+              <h1 class="score x">1</h1>
+            </div>
+            <div class="player o">
+              <h2 class="o">O</h2>
+              <h1 class="score o">1</h1>
+            </div>
+          </footer>
     </body>
 </html>

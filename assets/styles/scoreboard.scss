@@ -1,0 +1,26 @@
+footer {
+  border-color: black;
+  border-style: solid;
+  height: 15vw;
+  width: 40vw;
+}
+
+.x {
+  float: left;
+  margin-right: 20px;
+}
+
+.o {
+  float: right;
+  margin-left: 20px;
+}
+
+.player.x {
+  height: 100%;
+  width: 40%;
+}
+
+.player.o {
+  height: 100%;
+  width: 40%;
+}

@@ -1,0 +1,21 @@
+.cell {
+  background-color: $cell;
+  border-radius: 10px;
+  float: left;
+  margin: 1%;
+  padding-bottom: 31.33%; // = width for a 1:1 aspect ratio //
+  position: relative;
+  width: 31.33%;
+}
+
+.cell:hover {
+  background-color: $cell-hover;
+  box-shadow: 0 0 1em $cell-highlight;
+}
+
+.mark {
+  height: 100%; // = 100% - 2*5% padding //
+  position: absolute;
+  text-align: center;
+  width: 100%; // = 100% - 2*5% padding //
+}
