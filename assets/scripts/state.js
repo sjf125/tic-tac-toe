@@ -4,7 +4,6 @@ let turn = false;  //toggles between false (player X's turn) and true (player O'
 let moves = 0;  // counts total number of moves taken in the game (by both players)
 let xWin = false;
 let oWin = false;
-let draw = false;
 let xToken = 'X';
 let oToken = 'O';
 let xScore = 0;
@@ -21,7 +20,6 @@ module.exports = {
   moves,
   xWin,
   oWin,
-  draw,
   xToken,
   oToken,
   xScore,

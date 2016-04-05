@@ -2,9 +2,11 @@
 
 const state = require('./state.js');
 
+const index = require('./index.js');
+
 const checkBoard = function () {
   for (let i = 0; i < state.board.length; i++) {
-    state.board[i] = $(state.boardMap[i]).html();
+    state.board[i] = $(state.boardMap[i]).text();
   }
   return console.log('Checked board');
 };
@@ -14,11 +16,13 @@ const winner = function(cell) {
     console.log('Player X has won!');
     state.xWin = true;
     ++state.xScore;
+    $('.tokenator').off('click');
   }
   else if (cell === state.oToken) {
     console.log('Player O has won!');
     state.oWin = true;
     ++state.oScore;
+    $('.tokenator').off('click');
   }
 };
 
@@ -40,11 +44,11 @@ const checkWin = function () {
            state.board[2] === state.board[4] && state.board[4] === state.board[6]) {
       return winner(state.board[4]);
     }
-  else if (state.board.some(cell => cell !== '' || state.moves === 9)){
+  else if (state.moves === state.board.length){
       console.log('The game has ended in a draw!');
-      state.draw = true;
     }
   else {
+    console.log('Checked for a winner');
     return null;
   }
 };
