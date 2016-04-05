@@ -5,6 +5,7 @@ const score = require('./score.js');
 const check = require('./checks.js');
 
 const resetGame = function() {
+  state.gameOver = false;
   state.turn = false;
   state.xWin = false;
   state.oWin = false;
@@ -22,9 +23,10 @@ const newGame = function() {
         ++state.moves;
         check.checkBoard();
         check.checkWin();
-        state.turn = !state.turn;
-        score.turnIndicate();
-        console.log('Moves taken: ' + state.moves);
+        if(!state.gameOver) {
+          state.turn = !state.turn;
+          score.turnIndicate();
+        }
       }
     });
 };

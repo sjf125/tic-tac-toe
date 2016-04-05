@@ -19,16 +19,17 @@ const turnIndicate = function() {
 
 const endGame = function(result) {
   $('.tokenator').off('click');
-  if(result === state.xToken) {
+  if(result === 'X') {
     $('.player.x').css('border-color', 'yellow');
     $('.player.o').css('border-color', 'gray');
   }
-  else if (result === state.oToken) {
+  else if (result === 'O') {
     $('.player.o').css('border-color', 'yellow');
     $('.player.x').css('border-color', 'gray');
   } else {
     $('.player').css('border-color', 'gray');
   }
+  state.gameOver = true;
 };
 
 module.exports = {

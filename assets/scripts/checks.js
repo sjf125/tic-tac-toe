@@ -17,14 +17,14 @@ const winner = function(cell) {
   if(cell === state.xToken) {
     console.log('Player X has won!');
     state.xWin = true;
+    score.endGame('X');
     ++state.xScore;
-    score.endGame(state.xToken);
   }
   else if (cell === state.oToken) {
     console.log('Player O has won!');
     state.oWin = true;
+    score.endGame('O');
     ++state.oScore;
-    score.endGame(state.oToken);
   }
   score.update();
 };

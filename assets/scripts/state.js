@@ -2,6 +2,7 @@
 
 let turn = false;  //toggles between false (player X's turn) and true (player O's turn)
 let moves = 0;  // counts total number of moves taken in the game (by both players)
+let gameOver = false;
 let xWin = false;
 let oWin = false;
 let xToken = 'X';
