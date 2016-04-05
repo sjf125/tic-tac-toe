@@ -4,6 +4,8 @@ const state = require('./state.js');
 
 const index = require('./index.js');
 
+const score = require('./score.js');
+
 const checkBoard = function () {
   for (let i = 0; i < state.board.length; i++) {
     state.board[i] = $(state.boardMap[i]).text();
@@ -17,13 +19,16 @@ const winner = function(cell) {
     state.xWin = true;
     ++state.xScore;
     $('.tokenator').off('click');
+    score.winIndicate();
   }
   else if (cell === state.oToken) {
     console.log('Player O has won!');
     state.oWin = true;
     ++state.oScore;
     $('.tokenator').off('click');
+    score.winIndicate();
   }
+  score.update();
 };
 
 const checkWin = function () {
@@ -49,6 +54,7 @@ const checkWin = function () {
     }
   else {
     console.log('Checked for a winner');
+    score.winIndicate();
     return null;
   }
 };

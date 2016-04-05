@@ -1,8 +1,7 @@
 'use strict';
 
-
 const state = require('./state.js');
-
+const score = require('./score.js');
 const check = require('./checks.js');
 
 const resetGame = function() {
@@ -17,21 +16,17 @@ const resetGame = function() {
 };
 
 const newGame = function() {
-  // console.log(state.xWin + ' ' + state.oWin);
-  // if (!state.xWin || !state.oWin) {
     $('.tokenator').one('click', function() {
       if ($(this).children().text() === '') {
-        state.turn ? $(this).children().text(state.oToken) : $(this).children().text(state.xToken);
+        !state.turn ? $(this).children().text(state.xToken) : $(this).children().text(state.oToken);
         ++state.moves;
         check.checkBoard();
         check.checkWin();
         state.turn = !state.turn;
+        score.turnIndicate();
         console.log('Moves taken: ' + state.moves);
       }
     });
-  // } else {
-  //   return console.log('A player has won, reset the game!');
-  // }
 };
 
 const gameEnd = function() {
@@ -42,6 +37,7 @@ const gameEnd = function() {
 $('.start').on('click', function() {
   resetGame();
   newGame();
+  score.turnIndicate();
   console.log('Game started!');
 });
 
