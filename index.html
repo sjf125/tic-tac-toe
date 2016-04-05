@@ -98,13 +98,8 @@
   </nav>
   <h1 class="text-center">Tic Tac Toe!</h1>
     <button class="start center-block btn btn-info">New Game</button>
-  <div class="row">
-    <div class="player x col-md-4">
-      <h2 class="x">X</h2>
-      <h1 class="score x">0</h1>
-    </div>
 
-    <div class="board center-block col-md-4">
+    <div class="board center-block">
       <div class="cell">
         <div class="tokenator"><h2 id="a1"></h2></div>
       </div>
@@ -132,11 +127,17 @@
       <div class="cell">
         <div class="tokenator"><h2 id="c3"></h2></div>
       </div>
-    </div>
-
-    <div class="player o col-md-4">
-      <h2 class="o">O</h2>
-      <h1 class="score o">0</h1>
+    </div> <!-- End Board -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="player x col-xs-6 col-md-4">
+        <h2 class="x">X</h2>
+        <span><h1 class="score x">0</h1></span>
+      </div>
+      <div class="player o col-xs-6 col-md-4">
+        <span><h1 class="score o">0</h1></span>
+        <h2 class="o">O</h2>
+      </div>
     </div>
   </div>
 </body>

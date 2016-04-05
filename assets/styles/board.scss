@@ -6,8 +6,4 @@
   min-width: 300px;
   vertical-align: middle;
   width: 40vw;
-
-  @include breakpoint(small) {
-    max-width: 100%;
-}
 }
