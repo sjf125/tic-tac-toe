@@ -1,0 +1,7 @@
+'use strict';
+
+const url = {
+  api: 'http://tic-tac-toe.wdibos.com',
+};
+
+module.exports = url;

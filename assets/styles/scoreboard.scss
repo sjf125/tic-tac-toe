@@ -1,18 +1,17 @@
-// .x {
-//   float: left;
-// }
-//
-// .o {
-//   float: right;
-// }
+.x {
+  float: left;
+}
 
-.player{
-  border-style: solid;
+.o {
+  float: right;
+}
+
+.player {
   border-color: purple;
-
+  border-style: solid;
 }
 
 .score {
-  margin: 0 20px 0 20px;
   font-size: 8vw;
+  margin: 0 20px;
 }
