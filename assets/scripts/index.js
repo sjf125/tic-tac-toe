@@ -29,11 +29,6 @@ const newGame = function() {
     });
 };
 
-const gameEnd = function() {
-  $('.tokenator').off('click');
-  console.log("The game has ended - reset the game!");
-};
-
 $('.start').on('click', function() {
   resetGame();
   newGame();
@@ -48,5 +43,4 @@ $('.start').on('click', function() {
 module.exports = {
   resetGame,
   newGame,
-  gameEnd,
 };

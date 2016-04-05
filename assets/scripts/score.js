@@ -9,19 +9,21 @@ const update = function() {
 
 const turnIndicate = function() {
   if(!state.turn) {
-    $('.player.x').css('border-color', 'yellow');
+    $('.player.x').css('border-color', 'blue');
     $('.player.o').css('border-color', 'gray');
-  } else {
-    $('.player.o').css('border-color', 'yellow');
+  } else if (state.turn) {
+    $('.player.o').css('border-color', 'blue');
     $('.player.x').css('border-color', 'gray');
   }
 };
 
-const winIndicate = function () {
-  if(state.xWin) {
+const endGame = function(result) {
+  $('.tokenator').off('click');
+  if(result === state.xToken) {
     $('.player.x').css('border-color', 'yellow');
     $('.player.o').css('border-color', 'gray');
-  } else if (state.oWin) {
+  }
+  else if (result === state.oToken) {
     $('.player.o').css('border-color', 'yellow');
     $('.player.x').css('border-color', 'gray');
   } else {
@@ -32,5 +34,5 @@ const winIndicate = function () {
 module.exports = {
   update,
   turnIndicate,
-  winIndicate,
+  endGame,
 };

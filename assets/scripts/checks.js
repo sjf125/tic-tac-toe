@@ -18,15 +18,13 @@ const winner = function(cell) {
     console.log('Player X has won!');
     state.xWin = true;
     ++state.xScore;
-    $('.tokenator').off('click');
-    score.winIndicate();
+    score.endGame(state.xToken);
   }
   else if (cell === state.oToken) {
     console.log('Player O has won!');
     state.oWin = true;
     ++state.oScore;
-    $('.tokenator').off('click');
-    score.winIndicate();
+    score.endGame(state.oToken);
   }
   score.update();
 };
@@ -51,10 +49,10 @@ const checkWin = function () {
     }
   else if (state.moves === state.board.length){
       console.log('The game has ended in a draw!');
+      score.endGame();
     }
   else {
     console.log('Checked for a winner');
-    score.winIndicate();
     return null;
   }
 };
