@@ -3,24 +3,25 @@ footer {
   border-style: solid;
   height: 15vw;
   width: 40vw;
+  min-width: 300px;
 }
 
 .x {
   float: left;
-  margin-right: 20px;
 }
 
 .o {
   float: right;
-  margin-left: 20px;
 }
 
-.player.x {
+.player{
+  border-style: solid;
+  border-color: purple;
   height: 100%;
-  width: 40%;
+  width: 45%;
 }
 
-.player.o {
-  height: 100%;
-  width: 40%;
+.score {
+  margin: 0 20px 0 20px;
+  font-size: 8vw;
 }

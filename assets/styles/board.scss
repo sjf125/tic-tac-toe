@@ -2,8 +2,12 @@
   border-color: $border;
   border-style: dotted;
   height: 40vw;
-  min-height: 150px;
-  min-width: 150px;
+  min-height: 300px;
+  min-width: 300px;
   vertical-align: middle;
   width: 40vw;
+
+  @include breakpoint(small) {
+    max-width: 100%;
+}
 }
