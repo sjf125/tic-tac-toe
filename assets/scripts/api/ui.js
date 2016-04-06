@@ -1,15 +1,15 @@
 'use strict';
 
-const api = require('../apiurl.js');
+const app = require('./apiurl.js');
 
 const signInSuccess = (data) => {
-  api.user = data.user;
-  console.log(api);
+  app.user = data.user;
+  console.log(app);
 };
 
 const signOutSuccess = () => {
-  api.user = null;
-  console.log(api);
+  app.user = null;
+  console.log(app);
 };
 
 const success = (data) => {

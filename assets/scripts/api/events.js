@@ -2,12 +2,14 @@
 
 const getFormFields = require('../../../lib/get-form-fields');
 
-const authApi = require('./ajax');
-const authUi = require('./ui');
+const authApi = require('./ajax.js');
+const authUi = require('./ui.js');
+const app = require('./apiurl.js');
 
 const addHandlers = () => {
   $('#sign-up').on('submit', function (event) {
     console.log('Click!');
+    console.log(app.api);
     let data = getFormFields(this);
     event.preventDefault();
     authApi.signUp(authUi.success, authUi.failure, data);

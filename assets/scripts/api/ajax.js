@@ -1,11 +1,11 @@
 'use strict';
 
-const api = require('./apiurl.js');
+const app = require('./apiurl.js');
 
 const signUp = (success, failure, data) => {
   $.ajax({
     method: 'POST',
-    url: api.url + '/sign-up',
+    url: app.api + '/sign-up',
     dataProcessing: false,
     data,
   }).done(success)
@@ -16,7 +16,7 @@ const signUp = (success, failure, data) => {
 const signIn = (success, failure, data) => {
   $.ajax({
     method: 'POST',
-    url: api.url + '/sign-in',
+    url: app.api + '/sign-in',
     dataProcessing: false,
     data,
   }).done(success)
@@ -24,12 +24,12 @@ const signIn = (success, failure, data) => {
 };
 
 const signOut = (success, failure) => {
-  // if (!app.user) bad;
+  // if (!api.user) bad;
   $.ajax({
     method: 'DELETE',
-    url: api.url + '/sign-out/' + api.user.id,
+    url: app.api + '/sign-out/' + app.user.id,
     headers: {
-      Authorization: 'Token token=' + api.user.token,
+      Authorization: 'Token token=' + app.user.token,
     },
   }).done(success)
   .fail(failure);
@@ -38,9 +38,9 @@ const signOut = (success, failure) => {
 const changePass = (success, failure, data) => {
   $.ajax({
     method: 'PATCH',
-    url: api.url + '/change-password/' + api.user.id,
+    url: app.api + '/change-password/' + app.user.id,
     headers: {
-      Authorization: 'Token token=' + api.user.token,
+      Authorization: 'Token token=' + app.user.token,
     },
     dataProcessing: false,
     data,
