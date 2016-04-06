@@ -10,7 +10,7 @@ const checkBoard = function () {
   for (let i = 0; i < state.board.length; i++) {
     state.board[i] = $(state.boardMap[i]).text();
   }
-  return console.log('Checked board');
+  // return console.log('Checked board');
 };
 
 const winner = function(cell) {

@@ -29,8 +29,8 @@ const apiUpdate = function(cell, val) {
         'index': state.boardMap.indexOf('#' + cell),
         'value': val.toLowerCase()
       },
+      'over': state.over
     },
-    'over': state.over
   };
   // console.log(gameData);
   authEvents.autoUpdateGame(gameData);
@@ -43,7 +43,7 @@ const newGame = function() {
         ++state.moves;
         check.checkBoard();
         check.checkWin();
-        if(!state.gameOver) {
+        if(!state.over) {
           state.turn = !state.turn;
           score.turnIndicate();
         }
