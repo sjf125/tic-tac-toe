@@ -39,11 +39,11 @@ const addHandlers = () => {
     event.preventDefault();
     authApi.findGame(authUi.success, authUi.failure/*/, id/*/);
   });
-  $('#update-game').on('submit', function (event) {
-    let data = //getFormFields(this);
-    event.preventDefault();
-    authApi.updateGame(authUi.success, authUi.failure, data);
-  });
+  // $('#update-game').on('submit', function (event) {
+  //   let data = //getFormFields(this);
+  //   event.preventDefault();
+  //   authApi.updateGame(authUi.success, authUi.failure, data);
+  // });
 };
 
 const autoUpdateGame = function(data) {

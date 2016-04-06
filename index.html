@@ -68,6 +68,56 @@
     </div>
   </div>
   <!-- End modal change-pass -->
+  <!-- Modal find-game -->
+  <div class="modal fade" id="find-game-modal" tabindex="-1" role="dialog" aria-labelledby="find-game-label">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="find-game-label">Find game(s)</h4>
+        </div>
+        <div class="modal-body">
+          <form id="find-game">
+            <div class="form-group">
+              <label for="find-game-id">Find a game by its ID...</label>
+              <input name="game[id]" type="text" class="form-control" id="find-game-id" placeholder="enter a game id">
+            </div>
+            <button type="submit" class="btn btn-info">Submit</button>
+          </form>
+          <p> </p>
+          <form id="find-games">
+            <div class="form-group">
+              <label for="find-game-id">...or find multiple games</label>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="games[index]" id="games-index" value="">
+                  Show all games
+                </label>
+                </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="games[over]" id="games-over-true" value="?over=true">
+                  Show all completed games
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="games[notover]" id="games-over-false" value="?over=false">
+                  Show all incomplete games
+                </label>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+          <p class="bg-info" id="find-games-output"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End modal find-game -->
 
   <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -92,6 +142,9 @@
         </form>
         <button type="submit" class="btn btn-success navbar-btn" id="sign-up-btn" data-toggle="modal" data-target="#sign-up-modal">
           Sign up!
+        </button>
+        <button type="submit" class="btn btn-info navbar-btn" id="find-game-btn" data-toggle="modal" data-target="#find-game-modal">
+          Find game(s)
         </button>
         <button type="submit" class="btn btn-warning navbar-btn" id="change-pass-btn" data-toggle="modal" data-target="#change-pass-modal">
           Change password
