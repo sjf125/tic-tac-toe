@@ -47,8 +47,8 @@ const addHandlers = () => {
     console.log(val.games);
     event.preventDefault();
     val.games !== '' ?
-    authApi.findGames(authUi.findGamesSuccess, authUi.failure, val.games) :
-    authApi.findGame(authUi.findGameSuccess, authUi.failure, '');
+    authApi.findGames(authUi.findGamesSuccess, authUi.failure, '?over=' + val.games) :
+    authApi.findGames(authUi.findGamesSuccess, authUi.failure, '/');
   });
   // $('#update-game').on('submit', function (event) {
   //   let data = //getFormFields(this);

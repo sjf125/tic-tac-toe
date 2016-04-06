@@ -75,7 +75,7 @@ const findGame = (success, failure, id) => {
 const findGames = (success, failure, val) => {
   $.ajax({
     method: 'GET',
-    url: app.api + '/games?over=' + val,
+    url: app.api + '/games' + val,
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },

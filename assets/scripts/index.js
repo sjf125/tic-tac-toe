@@ -43,11 +43,11 @@ const newGame = function() {
         ++state.moves;
         check.checkBoard();
         check.checkWin();
-        apiUpdate($(this).children().attr('id'), $(this).children().text());
         if(!state.gameOver) {
           state.turn = !state.turn;
           score.turnIndicate();
         }
+        apiUpdate($(this).children().attr('id'), $(this).children().text());
       }
     });
 };

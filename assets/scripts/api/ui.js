@@ -32,14 +32,18 @@ const createGameSuccess = (data) => {
 const findGameSuccess = (data) => {
   console.log(data);
   $( document ).ready(function() {
-    $('#find-games-output').text(data.game);
+    $('#find-games-output').text(JSON.stringify(data.game));
   });
 };
 
 const findGamesSuccess = (data) => {
   console.log(data);
   $( document ).ready(function() {
-    $('#find-games-output').text(data.games);
+    let result = '';
+    for (var i = 0; i < data.games.length; i++) {
+      result += JSON.stringify(data.games[i], null, "\t");
+    }
+    $('#find-games-output').text(result);
   });
 };
 
