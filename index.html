@@ -80,9 +80,9 @@
           <form id="find-game">
             <div class="form-group">
               <label for="find-game-id">Find a game by its ID...</label>
-              <input name="game[id]" type="text" class="form-control" id="find-game-id" placeholder="enter a game id">
+              <input name="game" type="text" class="form-control" id="find-game-id" placeholder="enter a game id">
             </div>
-            <button type="submit" class="btn btn-info">Submit</button>
+            <button type="submit" class="btn btn-info">Find a game</button>
           </form>
           <p> </p>
           <form id="find-games">
@@ -90,23 +90,23 @@
               <label for="find-game-id">...or find multiple games</label>
               <div class="radio">
                 <label>
-                  <input type="radio" name="games[index]" id="games-index" value="">
+                  <input type="radio" name="games" id="games-index" value="">
                   Show all games
                 </label>
                 </div>
               <div class="radio">
                 <label>
-                  <input type="radio" name="games[over]" id="games-over-true" value="?over=true">
+                  <input type="radio" name="games" id="games-over-true" value="true">
                   Show all completed games
                 </label>
               </div>
               <div class="radio">
                 <label>
-                  <input type="radio" name="games[notover]" id="games-over-false" value="?over=false">
+                  <input type="radio" name="games" id="games-over-false" value="false">
                   Show all incomplete games
                 </label>
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">Find games</button>
             </div>
           </form>
           <p class="bg-info" id="find-games-output"></p>
@@ -119,6 +119,7 @@
   </div>
   <!-- End modal find-game -->
 
+<!-- Navbar -->
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -153,6 +154,8 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
+<!-- end navbar -->
+
   <h1 class="text-center">Tic Tac Toe!</h1>
     <div class="board center-block">
       <div class="cell">

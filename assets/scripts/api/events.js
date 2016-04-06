@@ -37,7 +37,18 @@ const addHandlers = () => {
   });
   $('#find-game').on('submit', function (event) {
     event.preventDefault();
-    authApi.findGame(authUi.success, authUi.failure/*/, id/*/);
+    let id = getFormFields(this);
+    console.log(id.game);
+    event.preventDefault();
+    authApi.findGame(authUi.findGameSuccess, authUi.failure, id.game);
+  });
+  $('#find-games').on('submit', function (event) {
+    let val = getFormFields(this);
+    console.log(val.games);
+    event.preventDefault();
+    val.games !== '' ?
+    authApi.findGames(authUi.findGamesSuccess, authUi.failure, val.games) :
+    authApi.findGame(authUi.findGameSuccess, authUi.failure, '');
   });
   // $('#update-game').on('submit', function (event) {
   //   let data = //getFormFields(this);

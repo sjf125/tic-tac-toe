@@ -72,6 +72,19 @@ const findGame = (success, failure, id) => {
   .fail(failure);
 };
 
+const findGames = (success, failure, val) => {
+  $.ajax({
+    method: 'GET',
+    url: app.api + '/games?over=' + val,
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  }).done(success)
+  .fail(failure);
+};
+
+
+
 const updateGame = (success, failure, data) => {
   $.ajax({
     method: 'PATCH',
@@ -92,5 +105,6 @@ module.exports = {
   changePass,
   createGame,
   findGame,
+  findGames,
   updateGame,
 };

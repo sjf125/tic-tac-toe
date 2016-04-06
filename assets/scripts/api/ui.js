@@ -29,6 +29,20 @@ const createGameSuccess = (data) => {
   state.gameID = data.game.id;
 };
 
+const findGameSuccess = (data) => {
+  console.log(data);
+  $( document ).ready(function() {
+    $('#find-games-output').text(data.game);
+  });
+};
+
+const findGamesSuccess = (data) => {
+  console.log(data);
+  $( document ).ready(function() {
+    $('#find-games-output').text(data.games);
+  });
+};
+
 const success = (data) => {
   console.log(data);
 };
@@ -43,4 +57,6 @@ module.exports = {
   signInSuccess,
   signOutSuccess,
   createGameSuccess,
+  findGameSuccess,
+  findGamesSuccess
 };
