@@ -6,9 +6,8 @@ const signInSuccess = (data) => {
   app.user = data.user;
   console.log(app);
   $( document ).ready(function() {
-    $('#sign-in, #sign-up-btn').hide();
-    $('#sign-in-success').show().fadeOut(1000);
-    $('#sign-out, #change-pass-btn').delay(1000).show();
+    $('#sign-in, #sign-up-btn').fadeOut(500);
+    $('#sign-out, #change-pass-btn').delay(500).fadeIn(500);
   });
 };
 
@@ -17,13 +16,16 @@ const signOutSuccess = () => {
   console.log(app);
   $( document ).ready(function() {
     $('#sign-out, #change-pass-btn').fadeOut(500);
-    $('#sign-in').delay(500).fadeIn(500);
+    $('#sign-in, #sign-up-btn').delay(500).fadeIn(500);
   });
 };
 
 const createGameSuccess = (data) => {
   console.log('Game created!');
   console.log(data);
+  $( document ).ready(function() {
+    $('#game-id').text(data.game.id);
+  });
 };
 
 const success = (data) => {
