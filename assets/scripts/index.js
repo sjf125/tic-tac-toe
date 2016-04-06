@@ -22,6 +22,18 @@ const resetGame = function() {
   }
 };
 
+const apiUpdate = function() {
+  let gameData = {
+    'game': {
+      'cell': state.boardMap.IndexOf($(this).children().attr('id')),
+      'value': state.board.$(this).children().text().toLowerCase
+    },
+    'over': state.over
+  };
+  console.log("Game update data below!");
+  console.log(gameData);
+};
+
 const newGame = function() {
     $('.tokenator').one('click', function() {
       if ($(this).children().text() === '') {
@@ -29,6 +41,7 @@ const newGame = function() {
         ++state.moves;
         check.checkBoard();
         check.checkWin();
+        apiUpdate();
         if(!state.gameOver) {
           state.turn = !state.turn;
           score.turnIndicate();
@@ -51,4 +64,5 @@ $('.start').on('click', function() {
 module.exports = {
   resetGame,
   newGame,
+  apiUpdate,
 };

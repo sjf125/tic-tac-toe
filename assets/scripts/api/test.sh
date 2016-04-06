@@ -1,13 +1,13 @@
 #!/bin/sh
 
-curl "http://tic-tac-toe.wdibos.com/sign-up" \
+curl "http://tic-tac-toe.wdibos.com/games/index" \
   --include \
-  --request POST \
+  --request GET \
   --header "Content-Type: application/json" \
   --data "{
       \"credentials\" : {
-      \"email\" : \"$EMAIL\",
-      \"password\" : \"$PASSWORD\"
+      \"email\" : \"coolstory@bro.com\",
+      \"password\" : \"ooo\"
     }
   }"
   echo

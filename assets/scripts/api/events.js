@@ -22,7 +22,6 @@ const addHandlers = () => {
     authApi.signIn(authUi.signInSuccess, authUi.failure, data);
   });
   $('#sign-out').on('click', function (event) {
-    console.log('Click!');
     event.preventDefault();
     authApi.signOut(authUi.signOutSuccess, authUi.failure);
   });
@@ -32,7 +31,7 @@ const addHandlers = () => {
     authApi.changePass(authUi.success, authUi.failure, data);
   });
   // Game Handlers
-  $('#create-game').on('submit', function (event) {
+  $('#create-game').on('click', function (event) {
     event.preventDefault();
     authApi.createGame(authUi.createGameSuccess, authUi.failure);
   });
@@ -47,6 +46,11 @@ const addHandlers = () => {
   });
 };
 
+const autoUpdateGame = function(data) {
+  authApi.updateGame(authUi.success, authUi.failure, data);
+};
+
 module.exports = {
   addHandlers,
+  autoUpdateGame,
 };

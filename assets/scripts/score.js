@@ -29,7 +29,7 @@ const endGame = function(result) {
   } else {
     $('.player').css('border-color', 'gray');
   }
-  state.gameOver = true;
+  state.over = true;
 };
 
 module.exports = {
