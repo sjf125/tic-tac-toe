@@ -1,6 +1,7 @@
 'use strict';
 
 const app = require('./apiurl.js');
+const state = require('../state.js');
 
 const signInSuccess = (data) => {
   app.user = data.user;
@@ -25,6 +26,7 @@ const createGameSuccess = (data) => {
   $( document ).ready(function() {
     $('#game-id').text(data.game.id);
   });
+  state.gameID = data.game.id;
 };
 
 const success = (data) => {

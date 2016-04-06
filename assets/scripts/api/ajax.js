@@ -1,6 +1,7 @@
 'use strict';
 
 const app = require('./apiurl.js');
+const state = require('../state.js');
 
 const signUp = (success, failure, data) => {
   $.ajax({
@@ -74,7 +75,7 @@ const findGame = (success, failure, id) => {
 const updateGame = (success, failure, data) => {
   $.ajax({
     method: 'PATCH',
-    url: app.api + '/games/' + app.games.id,
+    url: app.api + '/games/' + state.gameID,
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },

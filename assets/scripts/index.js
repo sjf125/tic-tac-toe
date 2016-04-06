@@ -23,17 +23,17 @@ const resetGame = function() {
 };
 
 const apiUpdate = function(cell, val) {
-  console.log('cell: ' + cell);
-  console.log('value: ' + val);
   let gameData = {
     'game': {
-      'cell': state.boardMap.indexOf('#' + cell),
-      'value': val.toLowerCase()
+      'cell': {
+        'index': state.boardMap.indexOf('#' + cell),
+        'value': val.toLowerCase()
+      },
     },
     'over': state.over
   };
-  console.log("Game update data below!");
-  console.log(gameData);
+  // console.log(gameData);
+  authEvents.autoUpdateGame(gameData);
 };
 
 const newGame = function() {
