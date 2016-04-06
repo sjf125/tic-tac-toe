@@ -22,11 +22,13 @@ const resetGame = function() {
   }
 };
 
-const apiUpdate = function() {
+const apiUpdate = function(cell, val) {
+  console.log('cell: ' + cell);
+  console.log('value: ' + val);
   let gameData = {
     'game': {
-      'cell': state.boardMap.IndexOf($(this).children().attr('id')),
-      'value': state.board.$(this).children().text().toLowerCase
+      'cell': state.boardMap.indexOf('#' + cell),
+      'value': val.toLowerCase()
     },
     'over': state.over
   };
@@ -41,7 +43,7 @@ const newGame = function() {
         ++state.moves;
         check.checkBoard();
         check.checkWin();
-        apiUpdate();
+        apiUpdate($(this).children().attr('id'), $(this).children().text());
         if(!state.gameOver) {
           state.turn = !state.turn;
           score.turnIndicate();

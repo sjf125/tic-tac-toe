@@ -21,7 +21,6 @@ const signOutSuccess = () => {
 };
 
 const createGameSuccess = (data) => {
-  console.log('Game created!');
   console.log(data);
   $( document ).ready(function() {
     $('#game-id').text(data.game.id);
