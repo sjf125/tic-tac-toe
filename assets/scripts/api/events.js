@@ -10,6 +10,7 @@ const addHandlers = () => {
   $( document ).ready(function() {
     $('#sign-out, #change-pass-btn, #sign-in-success').hide();
   });
+  // Login handers
   $('#sign-up').on('submit', function (event) {
     let data = getFormFields(this);
     event.preventDefault();
@@ -28,6 +29,21 @@ const addHandlers = () => {
     let data = getFormFields(this);
     event.preventDefault();
     authApi.changePass(authUi.success, authUi.failure, data);
+  });
+  // Game Handlers
+  $('#create-game').on('submit', function (event) {
+    let data = getFormFields(this);
+    event.preventDefault();
+    authApi.createGame(authUi.signInSuccess, authUi.failure, data);
+  });
+  $('#find-game').on('submit', function (event) {
+    event.preventDefault();
+    authApi.findGame(authUi.signOutSuccess, authUi.failure);
+  });
+  $('#update-game').on('submit', function (event) {
+    let data = getFormFields(this);
+    event.preventDefault();
+    authApi.updateGame(authUi.success, authUi.failure, data);
   });
 };
 
