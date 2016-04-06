@@ -10,7 +10,6 @@ const signInSuccess = (data) => {
     $('#sign-in-success').show().fadeOut(1000);
     $('#sign-out, #change-pass-btn').delay(1000).show();
   });
-
 };
 
 const signOutSuccess = () => {
@@ -20,6 +19,11 @@ const signOutSuccess = () => {
     $('#sign-out, #change-pass-btn').fadeOut(500);
     $('#sign-in').delay(500).fadeIn(500);
   });
+};
+
+const createGameSuccess = (data) => {
+  console.log('Game created!');
+  console.log(data);
 };
 
 const success = (data) => {
@@ -35,4 +39,5 @@ module.exports = {
   success,
   signInSuccess,
   signOutSuccess,
+  createGameSuccess,
 };

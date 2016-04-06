@@ -48,9 +48,49 @@ const changePass = (success, failure, data) => {
   .fail(failure);
 };
 
+const createGame = (success, failure, data) => {
+  $.ajax({
+    method: 'POST',
+    url: app.api + '/games/',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    dataProcessing: false,
+    data,
+  }).done(success)
+  .fail(failure);
+};
+
+const findGame = (success, failure, id) => {
+  $.ajax({
+    method: 'GET',
+    url: app.api + '/games/' + id,
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  }).done(success)
+  .fail(failure);
+};
+
+const updateGame = (success, failure, data) => {
+  $.ajax({
+    method: 'PATCH',
+    url: app.api + '/games/' + app.games.id,
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    dataProcessing: false,
+    data,
+  }).done(success)
+  .fail(failure);
+};
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePass,
+  createGame,
+  findGame,
+  updateGame,
 };
