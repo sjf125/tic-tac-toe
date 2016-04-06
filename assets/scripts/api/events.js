@@ -32,16 +32,15 @@ const addHandlers = () => {
   });
   // Game Handlers
   $('#create-game').on('submit', function (event) {
-    let data = getFormFields(this);
     event.preventDefault();
-    authApi.createGame(authUi.createGameSuccess, authUi.failure, data);
+    authApi.createGame(authUi.createGameSuccess, authUi.failure);
   });
   $('#find-game').on('submit', function (event) {
     event.preventDefault();
-    authApi.findGame(authUi.success, authUi.failure);
+    authApi.findGame(authUi.success, authUi.failure/*/, id/*/);
   });
   $('#update-game').on('submit', function (event) {
-    let data = getFormFields(this);
+    let data = //getFormFields(this);
     event.preventDefault();
     authApi.updateGame(authUi.success, authUi.failure, data);
   });

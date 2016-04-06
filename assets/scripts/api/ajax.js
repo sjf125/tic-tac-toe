@@ -48,15 +48,14 @@ const changePass = (success, failure, data) => {
   .fail(failure);
 };
 
-const createGame = (success, failure, data) => {
+const createGame = (success, failure) => {
   $.ajax({
     method: 'POST',
     url: app.api + '/games/',
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },
-    dataProcessing: false,
-    data,
+    data: '',
   }).done(success)
   .fail(failure);
 };
