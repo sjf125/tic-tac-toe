@@ -9,7 +9,7 @@
 <body class="container-fluid">
 
   <!-- Modal sign-up -->
-  <div class="modal fade" id="sign-up" tabindex="-1" role="dialog" aria-labelledby="sign-up-label">
+  <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="sign-up-label">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -17,10 +17,10 @@
           <h4 class="modal-title" id="sign-up-label">Sign up!</h4>
         </div>
         <div class="modal-body">
-          <form>
+          <form id="sign-up">
             <div class="form-group">
               <label for="sign-up-email">Email address</label>
-              <input name="credentials[email]" type="email" class="form-control" id="sign-up-email" placeholder="email">
+              <input name="credentials[email]" type="text" class="form-control" id="sign-up-email" placeholder="email">
             </div>
             <div class="form-group">
               <label for="sign-up-pass">Password</label>
@@ -41,7 +41,7 @@
   </div>
   <!-- End modal sign-up -->
   <!-- Modal change-pass -->
-  <div class="modal fade" id="change-pass" tabindex="-1" role="dialog" aria-labelledby="change-pass-label">
+  <div class="modal fade" id="change-pass-modal" tabindex="-1" role="dialog" aria-labelledby="change-pass-label">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -49,10 +49,10 @@
           <h4 class="modal-title" id="change-pass-label">Change password</h4>
         </div>
         <div class="modal-body">
-          <form>
+          <form id="change-pass">
             <div class="form-group">
               <label for="old-pass">Old Password</label>
-              <input name="passwords[old]" type="email" class="form-control" id="old-pass" placeholder="old password">
+              <input name="passwords[old]" type="password" class="form-control" id="old-pass" placeholder="old password">
             </div>
             <div class="form-group">
               <label for="new-pass">New Password</label>
@@ -83,21 +83,23 @@
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-        <form class="navbar-form navbar-right">
+        <form class="navbar-form navbar-right" id="sign-in">
           <div class="form-group">
             <input type="text" name="credentials[email]" class="form-control" placeholder="email">
-            <input type="text" name="credentials[password]" class="form-control" placeholder="password">
+            <input type="password" name="credentials[password]" class="form-control" placeholder="password">
           </div>
           <button type="submit" class="btn btn-primary">Sign in</button>
         </form>
-        <button type="submit" class="btn btn-success navbar-btn" data-toggle="modal" data-target="#sign-up">
+        <div class="alert alert-success navbar-right" role="alert" id="sign-in-success">Signed in!</div>
+        <button type="submit" class="btn btn-success navbar-btn" data-toggle="modal" data-target="#sign-up-modal">
           Sign up!
         </button>
-        <button type="submit" class="btn btn-warning navbar-btn" data-toggle="modal" data-target="#change-pass">
+        <button type="submit" class="btn btn-warning navbar-btn" id="change-pass-btn" data-toggle="modal" data-target="#change-pass-modal">
           Change password
         </button>
-        <button type="submit" class="btn btn-danger navbar-btn navbar-right">Sign out</button>
+        <form class="navbar-form navbar-right" id="sign-out">
+          <button type="submit" class="btn btn-danger">Sign out</button>
+        </form>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>

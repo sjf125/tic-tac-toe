@@ -1,8 +1,13 @@
-curl --include --request POST http://httpbin.org/post \
+#!/bin/sh
+
+curl "http://tic-tac-toe.wdibos.com/sign-up" \
+  --include \
+  --request POST \
   --header "Content-Type: application/json" \
-  --data '{
-    "user": {
-      "id": 1,
-      "email": "abc@123.com"
+  --data "{
+      \"credentials\" : {
+      \"email\" : \"$EMAIL\",
+      \"password\" : \"$PASSWORD\"
     }
-  }'
+  }"
+  echo
