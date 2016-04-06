@@ -8,7 +8,7 @@ const authUi = require('./ui.js');
 
 const addHandlers = () => {
   $( document ).ready(function() {
-    $('#sign-out, #change-pass-btn, #sign-in-success').hide();
+    $('#sign-out, #change-pass-btn, #sign-in-success, #find-game-btn').hide();
   });
   // Login handers
   $('#sign-up').on('submit', function (event) {

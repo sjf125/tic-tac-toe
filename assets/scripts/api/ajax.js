@@ -11,7 +11,6 @@ const signUp = (success, failure, data) => {
     data,
   }).done(success)
   .fail(failure);
-  // Math.random() > 0.5 ? success('in signUp') : failure(data);
 };
 
 const signIn = (success, failure, data) => {

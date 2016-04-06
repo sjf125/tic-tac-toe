@@ -134,23 +134,23 @@
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <form class="navbar-form navbar-right" id="sign-in">
+        <form class="navbar-form navbar-right loggedin-hide" id="sign-in">
           <div class="form-group">
             <input type="text" name="credentials[email]" class="form-control" placeholder="email">
             <input type="password" name="credentials[password]" class="form-control" placeholder="password">
           </div>
           <button type="submit" class="btn btn-primary">Sign in</button>
         </form>
-        <button type="submit" class="btn btn-success navbar-btn" id="sign-up-btn" data-toggle="modal" data-target="#sign-up-modal">
+        <button type="submit" class="btn btn-success navbar-btn loggedin-hide" id="sign-up-btn" data-toggle="modal" data-target="#sign-up-modal">
           Sign up!
         </button>
-        <button type="submit" class="btn btn-info navbar-btn" id="find-game-btn" data-toggle="modal" data-target="#find-game-modal">
+        <button type="submit" class="btn btn-info navbar-btn loggedout-hide" id="find-game-btn" data-toggle="modal" data-target="#find-game-modal">
           Find game(s)
         </button>
-        <button type="submit" class="btn btn-warning navbar-btn" id="change-pass-btn" data-toggle="modal" data-target="#change-pass-modal">
+        <button type="submit" class="btn btn-warning navbar-btn loggedout-hide" id="change-pass-btn" data-toggle="modal" data-target="#change-pass-modal">
           Change password
         </button>
-        <button type="submit" class="btn btn-danger navbar-btn navbar-right" id="sign-out">Sign out</button>
+        <button type="submit" class="btn btn-danger navbar-btn navbar-right loggedout-hide" id="sign-out">Sign out</button>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
