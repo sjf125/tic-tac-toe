@@ -34,11 +34,11 @@ const addHandlers = () => {
   $('#create-game').on('submit', function (event) {
     let data = getFormFields(this);
     event.preventDefault();
-    authApi.createGame(authUi.signInSuccess, authUi.failure, data);
+    authApi.createGame(authUi.createGameSuccess, authUi.failure, data);
   });
   $('#find-game').on('submit', function (event) {
     event.preventDefault();
-    authApi.findGame(authUi.signOutSuccess, authUi.failure);
+    authApi.findGame(authUi.success, authUi.failure);
   });
   $('#update-game').on('submit', function (event) {
     let data = getFormFields(this);
