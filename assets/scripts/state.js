@@ -12,7 +12,7 @@ let oToken = 'O';
 let xScore = 0;
 let oScore = 0;
 
-const board = ['', '', '', '', '', '', '', '', ''];
+const board = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 const boardMap = ['#a1', '#a2', '#a3',
                   '#b1', '#b2', '#b3',

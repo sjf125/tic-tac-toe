@@ -8,19 +8,24 @@ const score = require('./score.js');
 
 const checkBoard = function () {
   for (let i = 0; i < state.board.length; i++) {
-    state.board[i] = $(state.boardMap[i]).text();
+    if($(state.boardMap[i]).text() === state.xToken) {
+      state.board[i] = -1;
+    }
+    else if ($(state.boardMap[i]).text() === state.oToken) {
+      state.board[i] = 1;
+    }
   }
   return console.log('Checked board');
 };
 
-const winner = function(cell) {
-  if(cell === state.xToken) {
+const winner = function(win) {
+  if(win === 'X') {
     console.log('Player X has won!');
     state.xWin = true;
     score.endGame('X');
     ++state.xScore;
   }
-  else if (cell === state.oToken) {
+  else if (win === 'O') {
     console.log('Player O has won!');
     state.oWin = true;
     score.endGame('O');
@@ -29,35 +34,33 @@ const winner = function(cell) {
   score.update();
 };
 
+const winStates = [[0, 1, 2],
+                   [3, 4, 5],
+                   [6, 7, 8],
+                   [0, 3, 6],
+                   [1, 4, 7],
+                   [2, 5, 8],
+                   [0, 4, 8],
+                   [2, 4, 6]];
+
 const checkWin = function () {
-  //console.log('check for win');
-  //row and column win from top left cell
-  if (state.board[0] === state.board[1] && state.board[0] === state.board[2] ||
-      state.board[0] === state.board[3] && state.board[0] === state.board[6]) {
-      console.log('top-left horiz/vert win');
-      return winner(state.board[0]);
+  for (var i = 0; i < winStates.length; i++) {
+    let total = state.board[winStates[i][0]] + state.board[winStates[i][1]] + state.board[winStates[i][2]];
+    if (total === -3) {
+      console.log('X won!');
+      return winner('X');
     }
-  //row and column win from bottom right cell
-  else if (state.board[8] === state.board[5] && state.board[8] === state.board[2] ||
-           state.board[8] === state.board[7] && state.board[8] === state.board[6]) {
-             console.log('bottom-right horiz/vert win');
-      return winner(state.board[8]);
+    else if (total === 3) {
+      console.log('O won!');
+      return winner('O');
     }
-  //row, column, and diagonal wins going through center cell
-  else if (state.board[3] === state.board[4] && state.board[4] === state.board[5] ||
-           state.board[1] === state.board[4] && state.board[4] === state.board[7] ||
-           state.board[0] === state.board[4] && state.board[4] === state.board[8] ||
-           state.board[2] === state.board[4] && state.board[4] === state.board[6]) {
-             console.log('center win');
-      return winner(state.board[4]);
-    }
-  else if (state.moves === state.board.length){
+    else if (state.moves === state.board.length) {
       console.log('The game has ended in a draw!');
       score.endGame();
     }
-  else {
-    console.log('Checked for a winner');
-    return null;
+    else {
+      console.log('Checked for a winner');
+    }
   }
 };
 

@@ -17,7 +17,7 @@ const resetGame = function() {
   state.oWin = false;
   state.moves = 0;
   for (let i = 0; i < state.board.length; i++) {
-    state.board[i] = '';
+    state.board[i] = 0;
     $(state.boardMap[i]).text('');
   }
 };

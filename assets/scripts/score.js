@@ -18,7 +18,7 @@ const turnIndicate = function() {
   } else if (state.turn) {
     $('#o-scoreboard').removeClass('inactive winner').addClass('active');
     $('#x-scoreboard').removeClass('active winner').addClass('inactive');
-    $('#turn-indicator').removeClass('arrow-box, arrow-box-left').addClass('arrow-box-right');
+    $('#turn-indicator').removeClass('arrow-box arrow-box-left').addClass('arrow-box-right');
     $('#message').text('Turn: player O');
   }
 };
@@ -37,6 +37,7 @@ const endGame = function(result) {
   // Draw
   } else {
     $('.scoreboard').removeClass('active inactive winner').addClass('inactive');
+    $('#turn-indicator').removeClass('arrow-box-right arrow-box-left').addClass('arrow-box');
     $('#message').text('The game has ended in a draw!');
   }
   state.over = true;
