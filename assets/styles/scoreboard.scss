@@ -6,8 +6,19 @@
   float: right;
 }
 
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
 .player {
   border-color: purple;
+  border-style: solid;
+  display: table;
+  margin: 0
 }
 
 .score {
