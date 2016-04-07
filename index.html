@@ -150,6 +150,7 @@
         <button type="submit" class="btn btn-warning navbar-btn loggedout-hide" id="change-pass-btn" data-toggle="modal" data-target="#change-pass-modal">
           Change password
         </button>
+        <button class="start center-block btn navbar-btn btn-success loggedout-hide" id="create-game">New Game</button>
         <button type="submit" class="btn btn-danger navbar-btn navbar-right loggedout-hide" id="sign-out">Sign out</button>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -189,15 +190,14 @@
   <div class="container-fluid">
     <div class="row">
       <div class="player x col-xs-4 col-md-4">
-        <h2 class="x">X</h2>
+        <span class="label label-primary x"><h2>X</h2></span>
         <span><h1 class="score x">0</h1></span>
       </div>
       <div class="col-xs-4 col-md-4">
-        <button class="start center-block btn btn-lg btn-info" id="create-game">New Game</button>
-        <h4>Game ID: <span id="game-id"></span></h4>
+        <h3 id="text-center"><span class="label label-default">Game ID: <span id="game-id"></span></span></h4>
       </div>
       <div class="player o col-xs-4 col-md-4">
-        <h2 class="o">O</h2>
+        <span class="label label-danger o"><h2>O</h2></span>
         <span><h1 class="score o">0</h1></span>
       </div>
     </div>
