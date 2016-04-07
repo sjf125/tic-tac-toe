@@ -8,12 +8,16 @@ const update = function() {
 };
 
 const turnIndicate = function() {
+  //  X's turn
   if(!state.turn) {
-    $('.player.x').css('border-color', 'blue');
-    $('.player.o').css('border-color', 'gray');
+    $('#x-scoreboard').removeClass('inactive').addClass('active');
+    $('#o-scoreboard').removeClass('active').addClass('inactive');
+    $('#turn-indicator').removeClass('arrow-box, arrow-box-right').addClass('arrow-box-left');
+  //  O's Turn
   } else if (state.turn) {
-    $('.player.o').css('border-color', 'blue');
-    $('.player.x').css('border-color', 'gray');
+    $('#o-scoreboard').removeClass('inactive').addClass('active');
+    $('#x-scoreboard').removeClass('active').addClass('inactive');
+    $('#turn-indicator').removeClass('arrow-box, arrow-box-left').addClass('arrow-box-right');
   }
 };
 

@@ -28,9 +28,17 @@ $icon-margin: 2px;
 
 .score {
   font-size: 8vw;
-  margin: 0px;
+  margin: 1px;
 }
 
 .spacer {
   margin-top: 10px;
+}
+
+.active {
+  background-color: $active;
+}
+
+.inactive {
+  background-color: $inactive;
 }

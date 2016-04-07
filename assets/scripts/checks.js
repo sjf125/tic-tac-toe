@@ -2,7 +2,7 @@
 
 const state = require('./state.js');
 
-const index = require('./index.js');
+// const index = require('./index.js');
 
 const score = require('./score.js');
 
