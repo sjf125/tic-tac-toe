@@ -1,12 +1,13 @@
 $text-default: #383838;
 $cell: #d8f39a;
-$cell-hover: lighten($cell, 70%);
-$cell-highlight: #f6fcdd;
+$cell-hover: lighten($cell, 20%);
+$cell-highlight: #f0fd8a;
 $border: #474747;
 $x-color: #2772be;
 $o-color: #d03b33;
 $active: #fff;
 $inactive: #929090;
+$page-bg: #f2f2f2;
 
 /// Slightly lighten a color
 /// @param {Color} $color - color to tint
@@ -20,4 +21,8 @@ $inactive: #929090;
 /// @param {Number} $percentage - percentage of `$color` in returned color
 @function shade($color, $percentage) {
   @return mix(black, $color, $percentage);
+}
+
+body {
+  background-color: $page-bg;
 }
