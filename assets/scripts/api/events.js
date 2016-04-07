@@ -55,12 +55,13 @@ const addHandlers = () => {
     event.preventDefault();
     let id = getFormFields(this);
     console.log('join game: ' + id.game);
-    //authApi.joinGame(authUi.findGameSuccess, authUi.failure, id.game);
+    authApi.joinGame(authUi.joinGameSuccess, authUi.failure, id.game);
   });
+  
   $('#host-game').on('click', function (event) {
     event.preventDefault();
     console.log('host game: ' + state.gameID);
-    //authApi.hostGame(authUi.createGameSuccess, authUi.failure);
+    //authApi.hostGame(authUi.hostGameSuccess, authUi.failure);
   });
   // $('#update-game').on('submit', function (event) {
   //   let data = //getFormFields(this);

@@ -4,12 +4,13 @@ const resourceWatcher = require('./resource-watcher.js');
 const app = require('./apiurl.js');
 const state = require('../state.js');
 
-//Remote Game Handler
+// Remote Game Handler
 const gameWatcher = resourceWatcher(app.api + '/games/' + state.gameID + '/watch', {
       Authorization: 'Token token=' + app.user.token,
 });
 
-gameWatcher.on('change', function (data) {
+const watch = function() {
+  gameWatcher.on('change', function (data) {
       if (data.timeout) { //not an error
         gameWatcher.close();
         return console.warn(data.timeout);
@@ -27,5 +28,6 @@ gameWatcher.on('change', function (data) {
     gameWatcher.on('error', function (e) {
       console.error('an error has occured with the stream', e);
     });
+};
 
-module.exports = gameWatcher;
+module.exports = watch;
