@@ -95,15 +95,14 @@ const updateGame = (success, failure, data) => {
   .fail(failure);
 };
 
-const joinGame = (success, failure, data) => {
+const joinGame = (success, failure, id) => {
   $.ajax({
     method: 'PATCH',
-    url: app.api + '/games/' + state.gameID,
+    url: app.api + '/games/' + id,
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },
-    dataProcessing: false,
-    data,
+    data: '',
   }).done(success)
   .fail(failure);
 };

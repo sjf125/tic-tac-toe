@@ -1,4 +1,6 @@
 'use strict';
+
+//Create remote game
 const resourceWatcher = function (url, conf) {
   let token = function (conf) {
     return conf && (conf = conf.Authorization) &&
