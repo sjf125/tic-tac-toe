@@ -118,6 +118,35 @@
     </div>
   </div>
   <!-- End modal find-game -->
+  <!-- Modal remote game -->
+  <div class="modal fade" id="remote-game-modal" tabindex="-1" role="dialog" aria-labelledby="remote-game-label">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="remote-game-label">Change password</h4>
+        </div>
+        <div class="modal-body">
+          <form id="remote-game">
+            <div class="form-group">
+              <label for="old-pass">Join a remote game</label>
+              <input name="passwords[old]" type="password" class="form-control" id="old-pass" placeholder="old password">
+            </div>
+            <div class="form-group">
+              <label for="new-pass">Host a remote game</label>
+              <input name="passwords[new]" type="password" class="form-control" id="new-pass" placeholder="new password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End modal remote game -->
+
 
 <!-- Navbar -->
   <nav class="navbar navbar-default">
@@ -132,7 +161,7 @@
         </button>
       </div>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
+      <!-- Navbar buttons -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <form class="navbar-form navbar-right loggedin-hide" id="sign-in">
           <div class="form-group">
@@ -150,7 +179,11 @@
         <button type="submit" class="btn btn-warning navbar-btn loggedout-hide" id="change-pass-btn" data-toggle="modal" data-target="#change-pass-modal">
           Change password
         </button>
-        <button class="start center-block btn navbar-btn btn-success loggedout-hide" id="create-game">New Game</button>
+        <button class="start center-block btn navbar-btn btn-success loggedout-hide" id="create-game">New Local Game</button>
+        <button type="submit" class="btn btn-success navbar-btn loggedout-hide" id="remote-game-btn" data-toggle="modal" data-target="#remote-game-modal">
+          New Remote Game
+        </button>
+
         <button type="submit" class="btn btn-danger navbar-btn navbar-right loggedout-hide" id="sign-out">Sign out</button>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
