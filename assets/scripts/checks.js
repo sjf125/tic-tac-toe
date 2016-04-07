@@ -10,7 +10,7 @@ const checkBoard = function () {
   for (let i = 0; i < state.board.length; i++) {
     state.board[i] = $(state.boardMap[i]).text();
   }
-  // return console.log('Checked board');
+  return console.log('Checked board');
 };
 
 const winner = function(cell) {
@@ -30,14 +30,17 @@ const winner = function(cell) {
 };
 
 const checkWin = function () {
+  //console.log('check for win');
   //row and column win from top left cell
   if (state.board[0] === state.board[1] && state.board[0] === state.board[2] ||
       state.board[0] === state.board[3] && state.board[0] === state.board[6]) {
+      console.log('top-left horiz/vert win');
       return winner(state.board[0]);
     }
   //row and column win from bottom right cell
   else if (state.board[8] === state.board[5] && state.board[8] === state.board[2] ||
            state.board[8] === state.board[7] && state.board[8] === state.board[6]) {
+             console.log('bottom-right horiz/vert win');
       return winner(state.board[8]);
     }
   //row, column, and diagonal wins going through center cell
@@ -45,6 +48,7 @@ const checkWin = function () {
            state.board[1] === state.board[4] && state.board[4] === state.board[7] ||
            state.board[0] === state.board[4] && state.board[4] === state.board[8] ||
            state.board[2] === state.board[4] && state.board[4] === state.board[6]) {
+             console.log('center win');
       return winner(state.board[4]);
     }
   else if (state.moves === state.board.length){

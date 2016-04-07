@@ -8,9 +8,17 @@ $icon-margin: 2px;
   float: left;
 }
 
-.player {
+.scoreboard {
   border-color: $text-default;
   border-style: solid;
+  display: table;
+  margin: 0;
+  border-radius: 10px;
+}
+
+.player {
+  border-color: $text-default;
+  //border-style: solid;
   display: table;
   margin: 0;
   border-radius: 10px;
@@ -41,4 +49,10 @@ $icon-margin: 2px;
 
 .inactive {
   background-color: $inactive;
+}
+
+.winner {
+  background-color: $winner;
+  border-color: $winner;
+  box-shadow: 0 0 2em $winner;
 }
