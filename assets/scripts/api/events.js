@@ -6,7 +6,7 @@ const authApi = require('./ajax.js');
 const authUi = require('./ui.js');
 // const resourceWatcher = require('./resource-watcher.js');
 //  const app = require('./apiurl.js');
-const state = require('../state.js');
+// const state = require('../state.js');
 
 const addHandlers = () => {
   $( document ).ready(function() {
@@ -57,11 +57,10 @@ const addHandlers = () => {
     console.log('join game: ' + id.game);
     authApi.joinGame(authUi.joinGameSuccess, authUi.failure, id.game);
   });
-  
+
   $('#host-game').on('click', function (event) {
     event.preventDefault();
-    console.log('host game: ' + state.gameID);
-    //authApi.hostGame(authUi.hostGameSuccess, authUi.failure);
+    authApi.createGame(authUi.hostGameSuccess, authUi.failure);
   });
   // $('#update-game').on('submit', function (event) {
   //   let data = //getFormFields(this);

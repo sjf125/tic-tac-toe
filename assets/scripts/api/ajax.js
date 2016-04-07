@@ -107,18 +107,6 @@ const joinGame = (success, failure, id) => {
   .fail(failure);
 };
 
-// const hostGame = (success, failure, id) => {
-//   $.ajax({
-//     method: 'POST',
-//     url: app.api + '/games/' + id + '/watch/',
-//     headers: {
-//       Authorization: 'Token token=' + app.user.token,
-//     },
-//     data: '',
-//   }).done(success)
-//   .fail(failure);
-// };
-
 module.exports = {
   signUp,
   signIn,
