@@ -1,3 +1,5 @@
+$icon-margin: 2px;
+
 .right {
   float: right;
 }
@@ -7,8 +9,8 @@
 }
 
 .player {
-  border-color: purple;
-  //border-style: solid;
+  border-color: $text-default;
+  border-style: solid;
   display: table;
   margin: 0;
   border-radius: 10px;
@@ -16,13 +18,19 @@
 
 .x {
   background-color: $x-color;
+  margin: $icon-margin;
 }
 
 .o {
   background-color: $o-color;
+  margin: $icon-margin;
 }
 
 .score {
   font-size: 8vw;
-  margin: 0 20px;
+  margin: 0px;
+}
+
+.spacer {
+  margin-top: 10px;
 }

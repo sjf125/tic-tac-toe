@@ -1,44 +1,21 @@
-//
-// @mixin arrow-box($color) {
-//   .arrow-box {
-//   	position: relative;
-//     background: #e3e3e3;
-//     border: 4px solid $color;
-//   }
-//
-//   .arrow-box::after,
-//   .arrow-box::before {
-//     right: 100%;
-//     top: 50%;
-//     border: solid transparent;
-//     content: ' ';
-//     height: 0;
-//     width: 0;
-//     position: absolute;
-//     pointer-events: none;
-//   }
-//
-//   .arrow-box::after {
-//     border-color: $color;
-//     border-right-color: #e3e3e3;
-//     border-width: 20px;
-//     margin-top: -20px;
-//   }
-//
-//   .arrow-box::before {
-//     border-color: $color;
-//     border-right-color: $color;
-//     border-width: 26px;
-//     margin-top: -26px;
-//   }
-// }
+$arrow-size: 15px;
 
 .arrow-box {
 	position: relative;
 	background: #fcfcfc;
-	border: 4px solid #2772be;
+	border: 4px solid $cell;
+  border-radius: 10px;
 }
-.arrow-box:after, .arrow-box:before {
+
+//Left arrow for X
+.arrow-box-left {
+	position: relative;
+	background: #fcfcfc;
+	border: 4px solid $x-color;
+  border-radius: 10px;
+}
+
+.arrow-box-left:after, .arrow-box-left:before {
 	right: 100%;
 	top: 50%;
 	border: solid transparent;
@@ -49,15 +26,47 @@
 	pointer-events: none;
 }
 
-.arrow-box:after {
+.arrow-box-left:after {
 	border-color: rgba(252, 252, 252, 0);
 	border-right-color: #fcfcfc;
-	border-width: 20px;
-	margin-top: -20px;
+	border-width: $arrow-size;
+	margin-top: -$arrow-size;
 }
-.arrow-box:before {
+.arrow-box-left:before {
 	border-color: rgba(39, 114, 190, 0);
-	border-right-color: #2772be;
-	border-width: 26px;
-	margin-top: -26px;
+	border-right-color: $x-color;
+	border-width: ($arrow-size + 5px);
+	margin-top: -($arrow-size + 5px);
+}
+
+//Right arrow for O
+.arrow-box-right {
+	position: relative;
+	background: #fcfcfc;
+	border: 4px solid $o-color;
+  border-radius: 10px;
+}
+
+.arrow-box-right:after, .arrow-box-right:before {
+	left: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow-box-right:after {
+	border-color: rgba(252, 252, 252, 0);
+	border-left-color: #fcfcfc;
+	border-width: $arrow-size;
+	margin-top: -$arrow-size;
+}
+.arrow-box-right:before {
+	border-color: rgba(39, 114, 190, 0);
+	border-left-color: $o-color;
+	border-width: ($arrow-size + 5px);
+	margin-top: -($arrow-size + 5px);
 }
