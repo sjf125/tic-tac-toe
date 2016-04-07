@@ -189,19 +189,23 @@
     </div> <!-- End Board -->
   <div class="container-fluid">
     <div class="row">
-      <div class="col-xs-5 col-md-5">
+      <div class="col-xs-4 col-md-4">
         <div class="player right">
-          <span class="player x"><h2>X</h2></span>
-          <span><h1 class="score x">0</h1></span>
+          <h2 class="player left x">X</h2>
+          <h1 class="score left" id="x-score">0</h1>
         </div>
       </div>
-      <div class="col-xs-2 col-md-2">
-        <h3 class="text-center"><span class="label label-default" id="game-id-label">Game ID: <span id="game-id"></span></span></h4>
+      <div class="col-xs-4 col-md-4">
+        <div class="arrow-box">
+          <h3 class="text-center"><span class="label label-default" id="game-id-label">Game ID: <span id="game-id">start a game!</span></span></h3>
+          <p>_</p>
+          <p>_</p>
+        </div>
       </div>
-      <div class="col-xs-5 col-md-5">
+      <div class="col-xs-4 col-md-4">
         <div class="player left">
-          <span class="player o"><h2>O</h2></span>
-          <span><h1 class="score o">0</h1></span>
+          <h2 class="player right o">O</h2>
+          <h1 class="score right" id="o-score">0</h1>
         </div>
       </div>
     </div>

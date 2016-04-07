@@ -1,11 +1,3 @@
-.x {
-  float: left;
-}
-
-.o {
-  float: right;
-}
-
 .right {
   float: right;
 }
@@ -16,9 +8,18 @@
 
 .player {
   border-color: purple;
-  border-style: solid;
+  //border-style: solid;
   display: table;
-  margin: 0
+  margin: 0;
+  border-radius: 10px;
+}
+
+.x {
+  background-color: $x-color;
+}
+
+.o {
+  background-color: $o-color;
 }
 
 .score {

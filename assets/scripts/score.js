@@ -3,8 +3,8 @@
 const state = require('./state.js');
 
 const update = function() {
-  $('.score.x').text(String(state.xScore));
-  $('.score.o').text(String(state.oScore));
+  $('#x-score').text(String(state.xScore));
+  $('#o-score').text(String(state.oScore));
 };
 
 const turnIndicate = function() {

@@ -1,8 +1,10 @@
 $text-default: #383838;
-$cell: #D8F39A;
+$cell: #d8f39a;
 $cell-hover: lighten($cell, 70%);
-$cell-highlight: #F6FCDD;
+$cell-highlight: #f6fcdd;
 $border: #000;
+$x-color: #2772be;
+$o-color: #d03b33;
 
 /// Slightly lighten a color
 /// @param {Color} $color - color to tint
