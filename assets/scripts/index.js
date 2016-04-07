@@ -11,7 +11,7 @@ $(() => {
 });
 
 const resetGame = function() {
-  state.gameOver = false;
+  state.over = false;
   state.turn = false;
   state.xWin = false;
   state.oWin = false;
