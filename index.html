@@ -127,16 +127,18 @@
           <h4 class="modal-title" id="remote-game-label">Change password</h4>
         </div>
         <div class="modal-body">
-          <form id="remote-game">
+          <form id="join-game">
             <div class="form-group">
-              <label for="old-pass">Join a remote game</label>
-              <input name="passwords[old]" type="password" class="form-control" id="old-pass" placeholder="old password">
+              <label for="join-game">Join a remote game - get the game ID from a friend!</label>
+              <input name="game" type="text" class="form-control" id="join-game-id" placeholder="enter game id to join">
             </div>
+            <button type="submit" class="btn btn-primary">Join game</button>
+          </form>
+          <form id="host-game">
             <div class="form-group">
-              <label for="new-pass">Host a remote game</label>
-              <input name="passwords[new]" type="password" class="form-control" id="new-pass" placeholder="new password">
+              <label for="new-pass">Host a remote game - tell a friend the game ID so they can join!</label>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-info">Host Game</button>
           </form>
         </div>
         <div class="modal-footer">
