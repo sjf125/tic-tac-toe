@@ -1,6 +1,8 @@
 'use strict';
 
-const resourceWatcher = require('./resource-watcher.js')
+const resourceWatcher = require('./resource-watcher.js');
+const app = require('./apiurl.js');
+const state = require('../state.js');
 
 //Remote Game Handler
 const gameWatcher = resourceWatcher(app.api + '/games/' + state.gameID + '/watch', {
