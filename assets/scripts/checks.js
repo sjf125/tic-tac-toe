@@ -6,14 +6,19 @@ const state = require('./state.js');
 
 const score = require('./score.js');
 
-const checkBoard = function () {
-  for (let i = 0; i < state.board.length; i++) {
-    if($(state.boardMap[i]).text() === state.xToken) {
-      state.board[i] = -1;
+const checkBoard = function (index, val) {
+  if(index || val === undefined) {
+    for (let i = 0; i < state.board.length; i++) {
+      if($(state.boardMap[i]).text() === state.xToken) {
+        state.board[i] = -1;
+      }
+      else if ($(state.boardMap[i]).text() === state.oToken) {
+        state.board[i] = 1;
+      }
     }
-    else if ($(state.boardMap[i]).text() === state.oToken) {
-      state.board[i] = 1;
-    }
+  } else {
+    console.log(val);
+    val === 'x' ? state.board[index] = -1 : state.board[index] = 1;
   }
   return console.log('Checked board');
 };

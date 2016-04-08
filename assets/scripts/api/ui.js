@@ -57,7 +57,7 @@ const joinGameSuccess = (data) => {
     $('#game-id').text(data.game.id);
   });
   state.gameID = data.game.id;
-  state.remote = true;
+  //state.remote = true;
   createWatcher();
 };
 
@@ -67,7 +67,7 @@ const hostGameSuccess = (data) => {
     $('#game-id').text(data.game.id);
   });
   state.gameID = data.game.id;
-  state.remote = true;
+  //state.remote = true;
   createWatcher();
 };
 

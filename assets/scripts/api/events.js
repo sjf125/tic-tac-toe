@@ -58,10 +58,11 @@ const addHandlers = () => {
     authApi.joinGame(authUi.joinGameSuccess, authUi.failure, id.game);
   });
 
-  $('#host-game').on('click', function (event) {
-    event.preventDefault();
-    authApi.createGame(authUi.hostGameSuccess, authUi.failure);
-  });
+//   $('#host-game').on('click', function (event) {
+//     event.preventDefault();
+//     console.log('Event fired!');
+//     authApi.createGame(authUi.hostGameSuccess, authUi.failure);
+//   });
 };
 
 const autoUpdateGame = function(data) {

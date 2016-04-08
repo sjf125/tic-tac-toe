@@ -3,6 +3,7 @@
 const resourceWatcher = require('./resource-watcher.js');
 const app = require('./apiurl.js');
 const state = require('../state.js');
+const check = require('../checks.js');
 
 // Remote Game Handler
 const createWatcher = function() {
@@ -17,8 +18,7 @@ const createWatcher = function() {
       } else if (data.game && data.game.cell) {
         let game = data.game;
         let cell = game.cell;
-        $('#watch-index').val(cell.index);
-        $('#watch-value').val(cell.value);
+        check.checkBoard(cell.index, cell.value);
       } else {
         console.log(data);
       }

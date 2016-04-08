@@ -4,6 +4,7 @@ const state = require('./state.js');
 const score = require('./score.js');
 const check = require('./checks.js');
 const authEvents = require('./api/events.js');
+const remote = require('./remotegame.js')
 
 // On document ready
 $(() => {
@@ -11,7 +12,6 @@ $(() => {
 });
 
 const resetGame = function() {
-  //state.remote = false;
   state.over = false;
   state.turn = false;
   state.xWin = false;
@@ -54,8 +54,17 @@ const newGame = function() {
 };
 
 $('.start').on('click', function() {
-  console.log('Click!')
   resetGame();
+  newGame();
+  score.turnIndicate();
+  console.log('Game started!');
+});
+
+$('#host-game').on('click', function () {
+  console.log('Click!');
+  remote.isPlayerO = false;
+  resetGame();
+  debugger;
   newGame();
   score.turnIndicate();
   console.log('Game started!');
