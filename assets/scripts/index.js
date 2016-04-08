@@ -11,7 +11,7 @@ $(() => {
 });
 
 const resetGame = function() {
-  state.remote = false;
+  //state.remote = false;
   state.over = false;
   state.turn = false;
   state.xWin = false;
@@ -54,6 +54,7 @@ const newGame = function() {
 };
 
 $('.start').on('click', function() {
+  console.log('Click!')
   resetGame();
   newGame();
   score.turnIndicate();

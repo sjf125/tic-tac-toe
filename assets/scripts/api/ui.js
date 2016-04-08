@@ -2,8 +2,7 @@
 
 const app = require('./apiurl.js');
 const state = require('../state.js');
-//const gameWatcher = require('./game-watcher.js');
-const resourceWatcher = require('./resource-watcher.js');
+const createWatcher = require('./game-watcher.js');
 
 const signInSuccess = (data) => {
   app.user = data.user;
@@ -49,35 +48,17 @@ const findGamesSuccess = (data) => {
   });
 };
 
+// Remote games
+
+
 const joinGameSuccess = (data) => {
   console.log(data);
   $( document ).ready(function() {
     $('#game-id').text(data.game.id);
   });
   state.gameID = data.game.id;
-  const gameWatcher = resourceWatcher(app.api + '/games/' + state.gameID + '/watch/', {
-        Authorization: 'Token token=' + app.user.token,
-  });
-
-  gameWatcher.on('change', function (data) {
-      console.log('Game Watcher is running!');
-        if (data.timeout) { //not an error
-          gameWatcher.close();
-          return console.warn(data.timeout);
-        } else if (data.game && data.game.cell) {
-          let game = data.game;
-          let cell = game.cell;
-          $('#watch-index').val(cell.index);
-          $('#watch-value').val(cell.value);
-        } else {
-          console.log(data);
-        }
-
-      });
-
-      gameWatcher.on('error', function (e) {
-        console.error('an error has occured with the stream', e);
-      });
+  state.remote = true;
+  createWatcher();
 };
 
 const hostGameSuccess = (data) => {
@@ -86,30 +67,8 @@ const hostGameSuccess = (data) => {
     $('#game-id').text(data.game.id);
   });
   state.gameID = data.game.id;
-  console.log('host game: ' + state.gameID);
-  const gameWatcher = resourceWatcher(app.api + '/games/' + state.gameID + '/watch/', {
-        Authorization: 'Token token=' + app.user.token,
-  });
-
-  gameWatcher.on('change', function (data) {
-      console.log('Game Watcher is running!');
-        if (data.timeout) { //not an error
-          gameWatcher.close();
-          return console.warn(data.timeout);
-        } else if (data.game && data.game.cell) {
-          let game = data.game;
-          let cell = game.cell;
-          $('#watch-index').val(cell.index);
-          $('#watch-value').val(cell.value);
-        } else {
-          console.log(data);
-        }
-
-      });
-
-      gameWatcher.on('error', function (e) {
-        console.error('an error has occured with the stream', e);
-      });
+  state.remote = true;
+  createWatcher();
 };
 
 const success = (data) => {

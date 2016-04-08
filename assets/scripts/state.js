@@ -3,7 +3,6 @@
 let gameID = null;
 
 //  For joining/leaving remote games
-let watch = null;
 let remote = false;
 
 let turn = false;  //toggles between false (player X's turn) and true (player O's turn)
@@ -35,6 +34,6 @@ module.exports = {
   boardMap,
   over,
   gameID,
-  watch,
+  //watch,
   remote,
 };

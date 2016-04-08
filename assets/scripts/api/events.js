@@ -62,11 +62,6 @@ const addHandlers = () => {
     event.preventDefault();
     authApi.createGame(authUi.hostGameSuccess, authUi.failure);
   });
-  // $('#update-game').on('submit', function (event) {
-  //   let data = //getFormFields(this);
-  //   event.preventDefault();
-  //   authApi.updateGame(authUi.success, authUi.failure, data);
-  // });
 };
 
 const autoUpdateGame = function(data) {
