@@ -12,6 +12,23 @@ const signInSuccess = (data) => {
   });
 };
 
+const signUpSuccess = (data) => {
+  app.user = data.user;
+  console.log(app);
+  $( document ).ready(function() {
+    $('.alert').hide();
+    $('#sign-up-success').fadeIn(300);
+  });
+};
+
+const signUpFailure = (error) => {
+  console.error(error);
+  $( document ).ready(function() {
+    $('.alert').hide();
+    $('#sign-up-failure').fadeIn(300);
+  });
+};
+
 const signOutSuccess = () => {
   app.user = null;
   console.log(app);
@@ -62,5 +79,7 @@ module.exports = {
   signOutSuccess,
   createGameSuccess,
   findGameSuccess,
-  findGamesSuccess
+  findGamesSuccess,
+  signUpSuccess,
+  signUpFailure,
 };
