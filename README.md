@@ -53,3 +53,4 @@ TODO wishlist:
   -Option for AI opponent(random, simple, prefect)
   -Option to change player marker (any ASCII character)
   -Option to change cell colors
+  -Ability to load and continue playing incomplete past games
